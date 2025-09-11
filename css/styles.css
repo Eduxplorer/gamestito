@@ -330,6 +330,7 @@ hr {
 /* Main com padding-top para compensar header fixo */
 #page main {
     width: 100%;
+    margin-bottom: 100px;
     background: #ddd;
     display: flex;
     justify-content: center;
@@ -389,6 +390,38 @@ hr {
     #page main .banner .banner-content>button:hover{
         background: #8C1007;
     }
+
+    #page main .cards {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+     #page main .cards .card {
+      display: flex;
+      width: 300px;
+      margin: 30px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #3E0703;
+     }
+
+     #page main .cards .card #game-image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100%;
+      height: inherit;
+      margin-bottom: 10px;
+     }
+
+     #page main .cards .card #game-title {
+      margin-bottom: 80px;
+     }
+
 
 /* Footer */
 #page footer {
