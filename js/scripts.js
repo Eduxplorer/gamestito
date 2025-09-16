@@ -14,7 +14,7 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle("open");
 });
 
-overlay.addEventListener('click', () =>{
+overlay.addEventListener('click', () => {
     sideMenu.classList.remove('active');
     overlay.classList.remove('acive');
     // Alterar o estado do ícone
@@ -24,17 +24,19 @@ overlay.addEventListener('click', () =>{
 async function fetchGames() {
     const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}`);
 
-    
+
     const data = await response.json();
-    
+
     console.log(data);
 
     displayGames(data.results)
 
 }
 
-function displayGames(games) {
-    games.forEach(game => {
+function displayGames(games) {      
+
+    let fourGames = games.slice(0, 4);
+    fourGames.forEach(game => {
         const cardCreate = document.createElement("div");
         cardCreate.classList.add("card")
         cardCreate.innerHTML = `

@@ -1,137 +1,156 @@
 /* Estilo base */
 body {
-    color: #000;
-    margin: 0;
-    font-family: sans-serif;
-}
-#page {
-    display: flex;
-    flex-direction: column;
-}
-/* Header fixo */
-#page header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-#page header .row {
-    position: relative; /* para posicionamento absoluto da logo */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(126, 14, 14, 0.7);
-    color: #fff;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    height: 100px; /* altura do maior bloco (logo) */
-}
-/* Menu */
-#page header .row .nav {
-    width: 120px;
-    height: 120px;
-    margin: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0; /* para não encolher */
-}
-/* Menu hamburger */
-.hamburger{
-    z-index: 1005;
-    cursor: pointer;
-    width: 90px;
-    height: 90px;
-    justify-content: space-between;
-    flex-direction: column;
-    transition: 0.3s;
-}
-.hamburger span{
-    height: 5px;
-    width: 50%;
-    margin: 5px 0px;
-    border-radius: 10px;
-    transition: 0.3s;
-    background: #fff;
-}
-/* Quando o menu está abetto, transformar o ícone do hambúrger em um "X" */
-.hamburger.open span:nth-child(1){
-    transform: rotate(55deg);
-    position: relative;
-    top: 15%;
-    left: 0;
-}
-.hamburger.open span:nth-child(2){
-    opacity: 0;
-}
-.hamburger.open span:nth-child(3){
-    transform: rotate(-55deg);
-    position: relative;
-    top: -15%;
-    left: 0;
-}
-/* Menu Lateral */
-nav.side-menu{
-    position: fixed;
-    top: 0;
-    left: -50%;
-    height: 100vh;
-    background: #111;
-    color: #fff;
-    padding: 60px 20px;
-    transition: left 0.4s ease;
-    z-index: 1002;
-}
-nav.side-menu.active{
-    left: 0;
-}
-nav.side-menu ul{
-    list-style: none;
-    margin-top: 130px;
-}
-nav.side-menu ul li{
-    margin: 20px 0;
-    font-size: 20px;
-}
-nav.side-menu ul li a{
-    text-decoration: none;
-    color: #fff;
-}
-nav.side-menu ul li a:hover{
-    color:#0f0
+  color: #000;
+  margin: 0;
+  font-family: sans-serif;
 }
 
-.overlay{
-    position: fixed;
-    top:0;
-    left: 0;
-    width: 0;
-    height: 100vh;
-    /* preto com 60% de transparencia */
-    background: rgba(0,0,0,0.4);
-    transition: width 0.4s ease;
-    z-index: 1001;
+#page {
+  display: flex;
+  flex-direction: column;
 }
-.overlay.active{
-    width: 100%;
+
+/* Header fixo */
+#page header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#page header .row {
+  position: relative;
+  /* para posicionamento absoluto da logo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 6, 7, 1);
+  color: #fff;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  height: 100px;
+  /* altura do maior bloco (logo) */
+}
+
+/* Menu */
+#page header .row .nav {
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  /* para não encolher */
+}
+
+/* Menu hamburger */
+.hamburger {
+  z-index: 1005;
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.hamburger span {
+  height: 5px;
+  width: 50%;
+  margin: 5px 0px;
+  border-radius: 10px;
+  transition: 0.3s;
+  background: #c33c55;
+}
+
+/* Quando o menu está abetto, transformar o ícone do hambúrger em um "X" */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(55deg);
+  position: relative;
+  top: 15%;
+  left: 0;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-55deg);
+  position: relative;
+  top: -15%;
+  left: 0;
+}
+
+/* Menu Lateral */
+nav.side-menu {
+  position: fixed;
+  top: 0;
+  left: -50%;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  padding: 60px 20px;
+  transition: left 0.4s ease;
+  z-index: 1002;
+}
+
+nav.side-menu.active {
+  left: 0;
+}
+
+nav.side-menu ul {
+  list-style: none;
+  margin-top: 130px;
+}
+
+nav.side-menu ul li {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+nav.side-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav.side-menu ul li a:hover {
+  color: #0f0
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  /* preto com 60% de transparencia */
+  background: rgba(0, 0, 0, 0.4);
+  transition: width 0.4s ease;
+  z-index: 1001;
+}
+
+.overlay.active {
+  width: 100%;
 }
 
 
 /* Pesquisa/Usuario */
 #page header .row .search-user {
-    width: 500px;
-    height: 120px;
-    margin: 5px;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    flex-shrink: 0;
+  width: 500px;
+  height: 120px;
+  margin: 5px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .input-wrapper {
@@ -151,7 +170,7 @@ nav.side-menu ul li a:hover{
   outline: none;
   border-radius: 50%;
   transition: .5s ease-in-out;
-  background-color: #fff;
+  background-color: #6c1e2d;
   box-shadow: 0px 0px 3px #f3f3f3;
   padding-right: 40px;
   color: #fff;
@@ -180,19 +199,20 @@ nav.side-menu ul li a:hover{
   border-style: none;
   border-radius: 50%;
   pointer-events: painted;
-  background-color: #fff;
+  background-color: #c33c55;
   transition: .2s linear;
 }
 
 .search-icon:focus {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .search-icon:focus svg path {
-  stroke: #fff; /* Cor que você deseja quando o botão está em foco */
+  stroke: #fff;
+  /* Cor que você deseja quando o botão está em foco */
 }
 
-.search-icon:focus ~ .search-input,
+.search-icon:focus~.search-input,
 .search-input:focus {
   box-shadow: none;
   width: 250px;
@@ -240,8 +260,7 @@ nav.side-menu ul li a:hover{
   font-size: inherit;
   color: inherit;
   white-space: nowrap;
-  padding: calc(var(--gap) * 2) calc(var(--gap) * 8) calc(var(--gap) * 2)
-    calc(var(--gap) * 4);
+  padding: calc(var(--gap) * 2) calc(var(--gap) * 8) calc(var(--gap) * 2) calc(var(--gap) * 4);
   text-align: left;
   background-color: var(--fill);
   border-radius: var(--br) calc(var(--br) / 2) calc(var(--br) / 2) var(--br);
@@ -314,142 +333,221 @@ hr {
 
 /* Logo centralizado absoluto */
 #page header .row .brand {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 200px;
-    height: 200px;
-    background: url("../img/GamesTito.png") no-repeat center center/contain;
-    margin: 0; /* remove margem para posicionamento absoluto */
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  height: 200px;
+  background: url("../img/GamesTito.png") no-repeat center center/contain;
+  margin: 0;
+  /* remove margem para posicionamento absoluto */
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
 /* Main com padding-top para compensar header fixo */
 #page main {
-    width: 100%;
-    margin-bottom: 100px;
-    background: #ddd;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 220px; /* altura do header + espaçamento */
+  width: 100%;
+  margin-bottom: 100px;
+  background: #0f0607;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 220px;
+  /* altura do header + espaçamento */
 }
+
 #page main .row {
-    background: #fff;
-    width: 100%;
-    margin: 20px auto;
+  background: #fff;
+  width: 100%;
+  margin: 20px auto;
 }
 
 #page main .banner {
-    display: flex;
-    color: #fff;
-    height: 700px;
-    left: 0;
-    margin-top: -220px;
-    width: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0px 20px;
-    box-sizing: border-box;
-    background: url("../img/banner1.jpg") no-repeat bottom center/cover;
+  display: flex;
+  color: #fff;
+  height: 700px;
+  left: 0;
+  margin-top: -220px;
+  width: 100%;
+  position: relative;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  background: url("../img/banner1.jpg") no-repeat bottom center/cover;
 
 }
 
-    #page main .banner .banner-content {
-        background: rgba(0, 0, 0, 0.5);
-        padding: 20px 40px;
-        border-radius: 10px;
-    }
+#page main .banner .banner-content {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+}
 
-    #page main .banner .banner-content>h2 {
-        margin: 0 0 10px;
-        font-size: 2.5rem;
-    }
+#page main .banner .banner-content>h2 {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+}
 
-    #page main .banner .banner-content>p {
-        margin: 0 0 20px;
-        font-size: 1.2rem;
-    }
+#page main .banner .banner-content>p {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+}
 
-    #page main .banner .banner-content>button {
-        color: #fff;
-        font-size: 1rem;
-        background: #3E0703;
-        border-color: #f00;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
+#page main .banner .banner-content>button {
+  color: #fff;
+  font-size: 1rem;
+  width: 40%;
+  background: #c33c55;
+  border-color: #8f2437;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
 
-    #page main .banner .banner-content>button:hover{
-        background: #8C1007;
-    }
+#page main .banner .banner-content>button:hover {
+  background: #8C1007;
+}
 
-    #page main .cards {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
+#page main .cards-container {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  padding: 20px;
+}
 
-     #page main .cards .card {
-      display: flex;
-      width: 300px;
-      margin: 30px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid #3E0703;
-     }
+#page main .cards-container>h2 {
+  font-size: 2.1rem;
+  margin-left: 80px;
+}
+#page main .cards {
+  display: flex;
+  color: #fff;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-     #page main .cards .card #game-image {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      width: 100%;
-      height: inherit;
-      margin-bottom: 10px;
-     }
+#page main .cards .card {
+  display: flex;
+  width: 300px;
+  height: 400px;
+  margin: 30px;
+  background-color: #18080a;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #3E0703;
+}
 
-     #page main .cards .card #game-title {
-      margin-bottom: 80px;
-     }
+#page main .cards .card #game-image {
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
 
+#page main .cards .card #game-title {
+  margin: 20px 30px 80px 30px;
+}
+
+#page main .lancamentos {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  color: #FFF;
+  background-color: #000;
+  margin: 10px  30px 30px 30px;
+  height: 700px;
+}
+
+#page main .lancamentos .lancamentos-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #8C1007;
+  width: 100%;
+}
+
+#page main .lancamentos .lancamentos-cards .big-card {
+  display: flex;
+  width: 100%;
+  height: 620px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  background-color: #0f0;
+  margin: 30px;
+}
+
+#page main .lancamentos .lancamentos-cards .lateral-cards {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: #fff;
+}
+
+#page main .lancamentos .lancamentos-cards .lateral-cards .gcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  margin: 10px 0 10px 0;
+  background-color: aqua;
+}
 
 /* Footer */
 #page footer {
-    background: #333;
-    display: flex;
-    justify-content: center;
+  background: #333;
+  display: flex;
+  justify-content: center;
 }
+
 #page footer .row {
-    background: #666;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
+  background: #666;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
 }
+
 /* Responsivo: telas acima de 1200px */
 @media (min-width: 1201px) {
-    #page main .row {
-        min-height: 100px;
-        max-width: 1250px;
-    }
+  #page main .row {
+    min-height: 100px;
+    max-width: 1250px;
+  }
 
-    #page main .banner {
-        max-width: 100%;
-    }
+  #page main .banner {
+    max-width: 100%;
+  }
 
 
-    #page footer .row {
-        min-height: 200px;
-        max-width: 1250px;
-    }
+  #page footer .row {
+    min-height: 200px;
+    max-width: 1250px;
+  }
 }
