@@ -7,6 +7,7 @@
     <title>Games Tito</title>
     <!-- Link para carregar o arquivo CSS -->
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/122abb5cd9.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -56,8 +57,8 @@
                         <input placeholder="Pesquisar Jogos..." class="search-input" name="text" type="text">
                     </div>
                     <div class="template">
-                        <div tabindex="0" class="popup user-button" style="padding:0 0.225rem  0; border-top-right-radius: 1.2rem;
-                                border-bottom-right-radius: 1.2rem;">
+                        <button id="user-button" tabindex="0" class="popup user-button" style="padding:0 0.225rem  0; border-top-right-radius: 1.2rem;
+                                border-bottom-right-radius: 1.2rem;" aria-haspopup="true" aria-expanded="false">
                             <div class="popup-header">
                                 <p
                                     style="letter-spacing: 1px; font-weight: 600;   padding: 0.625rem 0rem 0.625rem 0.825rem;">
@@ -115,7 +116,7 @@
                                     <li class="user-button item quit">Sair</li>
                                 </ul>
                             </div>
-                        </div>
+                        </button>
                     </div>
 
                 </div>
@@ -140,8 +141,8 @@
                 <h2>Jogos em Destaque</h2>
                 <div class="cards" id="cards">
                 </div>
-                    
-                    
+
+
 
 
 

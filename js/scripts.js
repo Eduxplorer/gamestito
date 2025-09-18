@@ -4,6 +4,9 @@ const apiKey = "3d55ae12ae7c4f62987b4da88877fd83";
 const hamburger = document.getElementById("hamburger");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
+const userButton = document.getElementById("user-button");
+const popupMenu = document.querySelector(".popup-main");
+
 // cards
 const cards = document.getElementById("cards");
 const gameImage = document.getElementById("game-image");
@@ -28,15 +31,28 @@ overlay.addEventListener("click", () => {
   hamburger.classList.remove("open");
 });
 
+
+
+userButton.addEventListener("click", () => {
+  const popupVisible = popupMenu.classList.toggle("popup-main--visible")
+  userButton.setAttribute("aria-expanded", popupVisible);
+});
+
+document.addEventListener("click", (event) => {
+  if(!popupMenu.contains(event.target) && !userButton.contains(event.target)) {
+    popupMenu.classList.remove("popup-main--visible");
+    userButton.setAttribute("aria-expanded", "false")
+  }
+});
+
+
+// Chamada API
 async function fetchGames() {
   const responseGames = await fetch(`https://api.rawg.io/api/games?key=${apiKey}`);
   const dataGames = await responseGames.json();
 
-  const responseDevelopers = await fetch(`https://api.rawg.io/api/developers?key=${apiKey}`);
-  const dataDev = await responseDevelopers.json();
-
-  console.log(dataGames);
-  // console.log(data.results);
+  // console.log(dataGames);
+  console.log(dataGames.results);
 
   displayGames(dataGames.results);
 }
@@ -45,11 +61,10 @@ function displayGames(games) {
   // Filtrando 4 jogos do array e exibindo nos cards da tela
   let fourGames = games.slice(0, 4);
   fourGames.forEach((game) => {
-    // 1. CRIE O CONTAINER PRINCIPAL COM A CLASSE "main"
     const cardContainer = document.createElement("div");
     cardContainer.classList.add("main");
 
-    // 2. REMOVA O CONTAINER "main" REDUNDANTE DO SEU INNERHTML
+
     cardContainer.innerHTML = `
             <div class="card" style="background-image: url(${game.background_image}); background-size: cover; background-position: center;">
                 <div class="fl">
@@ -84,7 +99,7 @@ function displayGames(games) {
     </div>
   </div>
         `;
-    // 3. ADICIONE O CONTAINER CORRETO AO DOM
+  
     cards.appendChild(cardContainer);
 
     // console.log(game.name);
@@ -108,10 +123,14 @@ function displayGames(games) {
 
   let newestGame = newestGames[0];
 
-  const bigImageGame = `
+  const bigGame = `
         <img class="lancamentos-img" src="${newestGame.background_image}" >
+        <div class="l-text-container">
+        <h3 class="l-texts">${newestGame.name}</h3>
+        <p class="l-texts"><i class="fa-solid fa-star"></i>${newestGame.rating}</p>
+        </div>
         `;
-  bigCard.innerHTML += bigImageGame;
+  bigCard.innerHTML += bigGame;
 
   let twoNewestGames = newestGames.slice(1, 3);
 
